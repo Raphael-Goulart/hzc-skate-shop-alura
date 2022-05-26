@@ -30,7 +30,7 @@ body {
     align-items: center;
     background-color: var(--cabeçalho-mobile);
     padding: 8px 16px;
-    box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.16); /*usar variavel*/
+    box-shadow: var(--sombras);
 }
 
 .cabecalho button{
