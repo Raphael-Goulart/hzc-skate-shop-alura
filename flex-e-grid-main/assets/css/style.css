@@ -1,4 +1,4 @@
-:root{
+:root {
     --corpo: #1D232A;
     --cabeçalho: #1D232A;
     --cabeçalho-mobile: #15191C;
@@ -33,9 +33,18 @@ body {
     box-shadow:  0px 4px 4px rgba(0, 0, 0, 0.16); /*usar variavel*/
 }
 
+.cabecalho button{
+    padding: 0;
+    border: 0;
+    background-color: var(--cabeçalho-mobile);
+    color: var(--fonte);
+}
+
 .cabecalho_menu i::before {
     content: "\e904";
     font-size: 24px;
+    font-family: var(--fonte-family);
+    background-color: var(--cabeçalho-mobile);
 }
 
 .cabecalho_logo{
@@ -45,7 +54,8 @@ body {
 .cabecalho_notificacao i::before {
     content: "\e906";
     font-size: 24px;
-
+    font-family: var(--fonte-family);
+    background-color: var(--cabeçalho-mobile);
 }
 
 .menu_lateral {
@@ -55,6 +65,14 @@ body {
     background-color: var(--menu-lateral);
     width: 75vw;
     height: 100vh;
+    position: absolute;
+    left: -100vw;
+    transition: .25s;
+}
+
+.menu_lateral--ativo{
+    left: 0;
+    transition: .25s;
 }
 
 .menu_lateral_logo{
@@ -71,7 +89,7 @@ body {
     padding-left: 64px;
 }
 
-.menu_lateral_link--active {
+.menu_lateral_link--ativo {
     color: var(--fonte);
     padding: 56px;
     border-left: 8px solid var(--fonte);
@@ -109,6 +127,120 @@ body {
 
 .menu_lateral_link--pintura::before {
     content: "\e90A"; 
+}
+
+.principal {
+    padding: 24px 16px;
+    display: grid;
+    gap: 16px;
+}
+
+.titulo_pagina {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.titulo_secao {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.cartao {
+    width: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: var(--cartão);
+}
+
+.cartao--destaque {
+    margin-bottom: 16px;
+}
+
+.cartao_conteudo {
+    padding: 16px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px; /*coloca uma barra um espaço dentro de cada elemento vertical e horizontal, se quiser só ns linhas use row-gap se for em coluna column-gap*/
+}
+
+.cartao_titulo {
+    grid-column: span 2;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.cartao_destaque {
+    display: grid;
+    grid-column: span 2; /*aqui nos mesclamos (span) as duas células (.2) do grid da classe cartao_conteudo */
+}
+
+.cartao_perfil {
+    color: var(--fonte-alternativa);
+    font-size: 0.9rem;
+    grid-column: span 2;
+}
+
+.cartao_info {
+    display: flex;
+    align-items: center;
+    color: var(--fonte-alternativa);
+}
+
+.cartao_info--tempo::before {
+    content: "\e90c";
+    margin-right: 8px;
+}
+
+.cartao_info--visualizacao::before {
+    content: "\e90f";
+    margin-right: 8px;
+}
+
+.cartao_botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--fonte-family);
+    color:var(--fonte);
+    background-color: var(--botão);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    justify-self: flex-end; /*levou o botao para a esquerda*/
+}
+
+.cartao_botao--play::before {
+    content: "\e90b";
+    font-size: 24px;
+}
+
+.cartao_botao--destaque {
+    width: 100%;
+    grid-column: span 2;
+}
+
+.cartao_botao--destaque::before {
+    margin-right: 8px;
+}
+
+.cartao_imagem {
+    width: 100%;
+}
+
+.secao {
+    display: grid;
+    gap: 16px;
+}
+
+.cartao_info--moeda::before {
+    content: "\e905";
+    margin-right: 8px;
+}
+
+.cartao_botao--buy::before {
+    content: "\e901";
+    font-size: 24px;
 }
 
 
